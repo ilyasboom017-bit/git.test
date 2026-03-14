@@ -20,7 +20,8 @@ export default defineConfig(({mode}) => {
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
       proxy: {
-        '/api': 'https://git-test-9psp.onrender.com',
+        '/api': {
+          target: 'https://git-test-9psp.onrender.com',
           changeOrigin: true,
         },
       },
